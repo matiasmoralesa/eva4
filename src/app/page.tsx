@@ -1,10 +1,18 @@
 'use client'
+import { AppRouter } from "./Router/AppRouter";
+import { Footer } from "./componentes/Footer";
+import { Header } from "./componentes/Header";
+import { BrowserRouter } from 'react-router-dom'
 
 export default function Home() {
-  return(
-  <div>
-    <h1>hola</h1>
-  </div>
+  return (
+    <>
+      <BrowserRouter>
+        <Header/>
+        <AppRouter/>
+        <Footer/>
+      </BrowserRouter>
+    </>
   )
 }
 
