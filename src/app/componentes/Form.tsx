@@ -3,13 +3,14 @@
 import React, { useState } from 'react'
 import { Reserva } from '../../../Interfaces';
 import { registrarReserva } from '../firebase/Promesas';
+import { Link } from 'react-router-dom';
 
 export const Formulario = () => {
     const [nombre, setNombre] = useState<string>('');
     const [correo, setCorreo] = useState<string>('');
     const [telefono, setTelefono] = useState<string>('');
     const [comida, setComida] = useState<string>('');
-    const [personas, setPersonas] = useState<number>(0);
+    const [personas, setPersonas] = useState<number |''>('');
     const [fecha, setFecha] = useState<string>('');
     const [hora, setHora] = useState<string>('');
     const [recomendacion, setRecomendacion] = useState<string>('')
@@ -22,19 +23,38 @@ export const Formulario = () => {
 
     const registrar = ()=>{
 
-        if(personas>0){
-            console.log("Nombre:",nombre);
-            console.log("condiciones:",isCheckeds)
-            alert("Bienvenido"+" "+nombre)
-            
-        }else{
-            setErrorPersonas("La cantidad debe ser positiva")
-        }
-        
-        const r:Reserva = {
-            nombre,correo,telefono,comida,personas,fecha,hora,recomendacion,isChekeds:isCheckeds
-        }
-        registrarReserva(r)
+        // Validar que todos los campos estén rellenados
+      if (
+        nombre.trim() === '' ||
+        correo.trim() === '' ||
+        telefono.trim() === '' ||
+        comida.trim() === '' ||
+        personas === '' ||
+        fecha === '' ||
+        hora === '' ||
+        recomendacion.trim() === ''
+        ) {
+        alert('Por favor, completa todos los campos.');
+      return;
+      }
+      // Validar la cantidad de personas
+    if (typeof personas === 'number') {
+      if (personas <= 0) {
+        setErrorPersonas('La cantidad de personas debe ser mayor a 0.');
+        return;
+      }
+      setErrorPersonas(''); // Si la cantidad de personas es válida, limpiamos el mensaje de error
+    } else {
+      setErrorPersonas('La cantidad de personas debe ser un número válido.');
+      return;
+    }  
+
+    alert('Formulario registrado exitosamente.');
+
+    const r:Reserva = {
+        nombre,correo,telefono,comida,personas,fecha,hora,recomendacion,isChekeds:isCheckeds
+    }
+    registrarReserva(r)
     }
   return (
     <form>
@@ -71,7 +91,7 @@ export const Formulario = () => {
         />
         </label>
         
-        <button onClick={registrar} type='button'>Registrar</button>
+        <button onClick={registrar} type='button'><Link to={"/home"}>Registrar</Link></button>
     </form>
   )
 }

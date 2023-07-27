@@ -8,7 +8,7 @@ export const Header = () => {
         <Link to={'/home'}>Home</Link>
         <Link to={'/formulario'}>Formulario</Link>
         <Link to={'/menu'}>Menu</Link>
-        <Link to={'/registros'}>Registros</Link>
+        <Link to={'/registros'}>Reservas</Link>
         <Link to={'/ubicacion'}>Ubicacion</Link>
         <Link to={'/redesSociales'}>Redes Sociales</Link>
     </nav>

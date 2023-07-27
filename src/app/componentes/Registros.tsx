@@ -18,9 +18,8 @@ export const Registros = () => {
                 <td>{r.fecha}</td>
                 <td>{r.hora}</td>
                 <td>{r.recomendacion}</td>
-                <td>{r.isChekeds}</td>
-                <td><Link to={"/actualizar/"+r.id}>Actualizar</Link></td>
-                <td><Link to={"/eliminar/"+r.id}>Eliminar</Link></td>
+                <td><Link to={"/actualizar/"+r.idReserva}>Actualizar</Link></td>
+                <td><Link to={"/eliminar/"+r.idReserva}>Eliminar</Link></td>
             </tr>
         })
         return elemntos
@@ -47,7 +46,6 @@ export const Registros = () => {
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Recomendacion</th>
-                <th>Condiciones</th>
             </tr>
             {
                 renderizarDatos()

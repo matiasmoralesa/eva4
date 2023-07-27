@@ -7,6 +7,8 @@ import { Menu } from '../componentes/Menu'
 import { Ubicacion } from '../componentes/Ubicacion'
 import { RedesSociales } from '../componentes/RedesSociales'
 import { Registros } from '../componentes/Registros'
+import { Actualizar } from '../componentes/Actualizar'
+import { Eliminar } from '../componentes/Eliminar'
 
 
 
@@ -19,6 +21,8 @@ export const AppRouter = () => {
         <Route path="/ubicacion" element={<Ubicacion/>} />
         <Route path="/redesSociales" element={<RedesSociales/>} />
         <Route path="/registros" element={<Registros/>} />
+        <Route path="/actualizar/:idReserva" element={<Actualizar/>} />
+        <Route path="/eliminar/:idReserva" element={<Eliminar/>} />
     </Routes>
   )
 }
