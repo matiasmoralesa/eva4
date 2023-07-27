@@ -6,6 +6,7 @@ import { Bienvenida } from '../componentes/Home'
 import { Menu } from '../componentes/Menu'
 import { Ubicacion } from '../componentes/Ubicacion'
 import { RedesSociales } from '../componentes/RedesSociales'
+import { Registros } from '../componentes/Registros'
 
 
 
@@ -17,6 +18,7 @@ export const AppRouter = () => {
         <Route path="/menu" element={<Menu/>} />
         <Route path="/ubicacion" element={<Ubicacion/>} />
         <Route path="/redesSociales" element={<RedesSociales/>} />
+        <Route path="/registros" element={<Registros/>} />
     </Routes>
   )
 }

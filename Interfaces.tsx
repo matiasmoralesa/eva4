@@ -7,6 +7,6 @@ export interface Reserva{
     fecha: string,
     hora:string,
     recomendacion:string,
-    isCheked: boolean
+    isChekeds: boolean
     id? : string,
 }

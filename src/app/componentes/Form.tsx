@@ -13,8 +13,8 @@ export const Formulario = () => {
     const [fecha, setFecha] = useState<string>('');
     const [hora, setHora] = useState<string>('');
     const [recomendacion, setRecomendacion] = useState<string>('')
-    const [isChecked, setIsChecked] = useState(false);
-    const [errorPersonas,setErrorPersonas] = useState("");
+    const [isCheckeds, setIsChecked] = useState(false);
+    const [errorPersonas,setErrorPersonas] = useState('');
 
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
        setIsChecked(event.target.checked);
@@ -24,14 +24,15 @@ export const Formulario = () => {
 
         if(personas>0){
             console.log("Nombre:",nombre);
-            alert("Bienvenido"+nombre)
+            console.log("condiciones:",isCheckeds)
+            alert("Bienvenido"+" "+nombre)
             
         }else{
             setErrorPersonas("La cantidad debe ser positiva")
         }
         
         const r:Reserva = {
-            nombre,correo,telefono,comida,personas,fecha,hora,recomendacion,isCheked
+            nombre,correo,telefono,comida,personas,fecha,hora,recomendacion,isChekeds:isCheckeds
         }
         registrarReserva(r)
     }
@@ -65,7 +66,7 @@ export const Formulario = () => {
         <label> Terminos y Condiciones
         <input
           type="checkbox"
-          checked={isChecked}
+          checked={isCheckeds}
           onChange={handleCheckboxChange}
         />
         </label>
