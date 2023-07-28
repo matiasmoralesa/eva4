@@ -91,7 +91,7 @@ export const Formulario = () => {
         />
         </label>
         
-        <button onClick={registrar} type='button'><Link to={"/home"}>Registrar</Link></button>
+        <button onClick={registrar} type='button'>Registrar</button>
     </form>
   )
 }

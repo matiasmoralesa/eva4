@@ -121,7 +121,7 @@ export const Actualizar = () => {
         />
         </label>
         
-        <button onClick={actualizar} type='button'><Link to={"/registros"}>Actualizar</Link></button>
+        <button onClick={actualizar} type='button'>Actualizar</button>
     </form>
     )
 

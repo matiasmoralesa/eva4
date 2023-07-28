@@ -128,7 +128,7 @@ return (
             </label>
         
             {/* Botón deshabilitado en modo de solo lectura */}
-            <button onClick={eliminar} type='button' ><Link to={"/registros"}>Eliminar</Link></button>
+            <button onClick={eliminar} type='button' >Eliminar</button>
         </form>
         );
 
